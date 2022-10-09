@@ -2,10 +2,20 @@
 import requests
 import json
 
-def loaddata(): 
+def load_data_for_testing(): 
     # CALLS THE API 
-    req = requests.get('https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&oddsFormat=decimal&apiKey=2aa86d6b0c26a31df201c7909ed9253c')
+    apiKey = ""
+    with open('src/api_key.txt') as f:
+        apiKey = f.readlines()
+    req = requests.get('https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&oddsFormat=decimal&apiKey=' + apiKey[0])
 
     # LOADS IT INTO A FILE IN DATA DIRECTORY 
     with open('data/data.json', 'w') as f:
         json.dump(req.json(), f)
+
+def load_data_execute():
+    # CALLS THE API 
+    apiKey = ""
+    with open('src/api_key.txt') as f:
+        apiKey = f.readlines()
+    return requests.get('https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&oddsFormat=decimal&apiKey=' + apiKey[0])

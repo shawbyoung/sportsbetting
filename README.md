@@ -1,5 +1,7 @@
 Sports Betting Bot
 
+Get your own API from https://the-odds-api.com/ and put in a file called api_key.txt in your src directory. 
+
 1)  HEDGING APPROACH 
     a)  Parse data
     b)  Find optimal hedges... it's disgustingly simple.

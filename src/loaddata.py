@@ -1,6 +1,8 @@
 # LOADDATA: Loads API data into a JSON for testing
 import requests
 import json
+import random
+import string
 
 def load_data_for_testing(): 
     # CALLS THE API 
@@ -9,10 +11,14 @@ def load_data_for_testing():
         apiKey = f.readlines()
     req = requests.get('https://api.the-odds-api.com/v4/sports/upcoming/odds/?regions=us&markets=h2h&oddsFormat=decimal&apiKey=' + apiKey[0])
 
+    letters = string.ascii_letters
+    fname = ''.join(random.choice(letters) for i in range(10))
     # LOADS IT INTO A FILE IN DATA DIRECTORY 
-    with open('data/data.json', 'w') as f:
+    with open('data/'+ fname + '.json', 'w') as f:
         json.dump(req.json(), f)
-
+    
+    return fname
+    
 def load_data_execute():
     # CALLS THE API 
     apiKey = ""

@@ -1,33 +1,12 @@
 from typing import Tuple
 
-
-def calculateReturn(best_odds_home, best_odds_away ):
-    f = 0
-    u = 0
-    
-    if best_odds_home > best_odds_away:
-        f = best_odds_away
-        u = best_odds_home
-    else:
-        f = best_odds_home
-        u = best_odds_away
-
+def calculateReturn(f, u ):
     return (f - (f/u) - 1) / (1 + (f/u))
 
-def calculateBetAmts(betAmt, best_odds_home, best_odds_away) -> Tuple:
-    f = 0
-    u = 0
-    
-    if best_odds_home > best_odds_away:
-        f = best_odds_away
-        u = best_odds_home
-    else:
-        f = best_odds_home
-        u = best_odds_away
-    
-    favoriteAndUnderdog = tuple()
-    favoriteAndUnderdog[0] = betAmt / ((f/u) + 1 )
-    favoriteAndUnderdog[1] = (betAmt*f) / (f + u)
+def calculateBetAmts(bet_amt, f, u) -> Tuple:
+    favoriteAndUnderdog = []
+    favoriteAndUnderdog.append(bet_amt / ((f/u) + 1 ))
+    favoriteAndUnderdog.append((bet_amt*f) / (f + u))
 
     return favoriteAndUnderdog
 

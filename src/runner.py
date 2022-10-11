@@ -6,7 +6,8 @@ from findbestodds import *
 
 def main():
     # GETS DATA FROM API 
-    fname  = 'ZaKyWiPaPc'
+    # fname  = load_and_save()
+    fname = 'data0'
     data = json.load(open('data/' + fname + '.json'))
     
     # CALCULATE SOME IDEAL BETS AND PRINTS

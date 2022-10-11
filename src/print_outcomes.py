@@ -39,5 +39,5 @@ def print_outcomes(home_team, broker_home, best_odd_home, away_team, broker_away
 #     net = betOnHome + betOnAway
 #     outcomes.add_row([home_team + 'wins', betOnHome, betOnAway, betOnDraw])
        
-    # outcomes.add_row([away_team + 'wins',])
-    # outcomes.add_row(['Draw',])
+#     outcomes.add_row([away_team + 'wins',])
+#     outcomes.add_row(['Draw',])

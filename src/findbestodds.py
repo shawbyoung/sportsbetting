@@ -56,8 +56,7 @@ def findbestodds(data):
         # If prob < 1, there is arbitrage 
         if( prob < 1 ): 
             if( broker_draw == ''):
-                print_outcomes(home_team, broker_home, best_odd_home, away_team, broker_away, best_odd_away, 100) 
+                print_outcomes(home_team, broker_home, best_odd_home, away_team, broker_away, best_odd_away, 1000) 
             else:
                 print()
-            print() 
-
+            print()

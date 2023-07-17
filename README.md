@@ -1,14 +1,7 @@
-Sports Betting Bot
+**Sports Betting Bot**
 
-Get your own API from https://the-odds-api.com/ and put in a file called api_key.txt in your src directory. 
+The program first uses The Odds api to get the odds for current games. 
 
-1.  HEDGING APPROACH 
-    1.  Parse data from API.
-    2.  Find optimal hedges... it's disgustingly simple.
-        Take all available decimal odds, invert, sum, anything below 100%/1.0 
-        is gold. Establish threshold of 'worthwhile' bets.
-    3.  Once arbitrage is found, decide between no loss and max profit or guaranteed profit.  
+Then, for each game, the most polarizing decimal odds are found. 
 
-2.  "ONE-CLICK" TRADING AUTOMATION 
-    1.  Automate trading with selenium
-        1.  Primary concern - hardcoding for different websites
+If the odds allow for hedging and a profit above a margin of 10%, the game is reported.
